@@ -277,6 +277,9 @@ jobs:
           if-no-files-found: error
 
   build-http-image:
+    permissions:
+      id-token: write
+      packages: write
     needs: [check-secret]
     uses: kubescape/workflows/.github/workflows/incluster-comp-pr-merged.yaml@main
     with:

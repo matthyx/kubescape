@@ -16,6 +16,9 @@ jobs:
         with:
           SUB_STRING: "-rc"
   binary-build:
+    permissions:
+      id-token: write
+      packages: write
     needs: [retag]
     uses: ./.github/workflows/b-binary-build-and-e2e-tests.yaml
     with:
