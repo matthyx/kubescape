@@ -279,6 +279,9 @@ jobs:
   build-http-image:
     needs: [check-secret]
     uses: kubescape/workflows/.github/workflows/incluster-comp-pr-merged.yaml@main
+    permissions:
+      id-token: write
+      packages: write
     with:
       IMAGE_NAME: quay.io/${{ github.repository_owner }}/kubescape
       IMAGE_TAG: ${{ inputs.RELEASE }}
